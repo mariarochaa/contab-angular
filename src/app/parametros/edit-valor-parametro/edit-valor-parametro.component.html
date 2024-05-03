@@ -1,0 +1,31 @@
+<mat-dialog-content>
+    <p>Editar Valor do Parâmetro:</p>
+<mat-card>
+  <mat-card-content>
+    <form>
+      <mat-form-field class="full-width">
+        <mat-label>Código do Parâmetro</mat-label>
+        <input matInput [disabled]="true" [value]="data.codigoParametro">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Descrição do Parâmetro</mat-label>
+        <input matInput [disabled]="true" [value]="data.descricaoParametro">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Valor Parâmetro</mat-label>
+        <input matInput [(ngModel)]="data.valorParametro" name="valorParametro" required>
+
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+</mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button (click)="onSave()" [mat-dialog-close]="data">Salvar</button>
+  </mat-dialog-actions>
+
+
